@@ -8,6 +8,6 @@ import org.apache.ibatis.annotations.Mapper;
 public interface TaskMapper {
 
     //計算式1件登録
-	public void insertTask(Task task);
+	void insertTask(Task task);
 
 }

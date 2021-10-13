@@ -4,6 +4,12 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- Mapperとxmlのマッピング -->
 <mapper namespace="com.raisetech.mapper.TaskMapper">
+	
+	<select id="selectFinTasks" resultMap="task">
+		SELECT * FROM tasks 
+		WHERE completed_flag = true;
+	</select>
+	
 	<insert id="insertTask">
 		INSERT INTO tasks(
 			task_content,

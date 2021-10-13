@@ -1,13 +1,18 @@
 package com.raisetech.mapper;
 
-import com.raisetech.entity.Task;
+import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.raisetech.entity.Task;
+
 @Mapper
 public interface TaskMapper {
-
+	
+	// 完了タスクの一覧取得
+	List<Task> selectFinTasks();
+	
     //計算式1件登録
 	void insertTask(Task task);
-
+	
 }

@@ -4,16 +4,9 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- Mapperとxmlのマッピング -->
 <mapper namespace="com.raisetech.mapper.TaskMapper">
-	<resultMap type="com.raisetech.entity.Task" id="task">
-		<id column="task_id" property="taskId" />
-		<result column="completed_flag" property="completedFlag" />
-		<result column="task_content" property="taskContent" />
-		<result column="task_note" property="taskNote" />
-		<result column="task_deadline" property="taskDeadline" />
-	</resultMap>
-	
-	<select id="selectTasks" resultMap="task">
-		SELECT * FROM tasks 
+
+	<select id="selectTasks" resultType="com.raisetech.entity.Task">
+		SELECT * FROM tasks
 		WHERE completed_flag = false;
 	</select>
 	

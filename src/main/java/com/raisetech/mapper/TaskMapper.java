@@ -9,12 +9,12 @@ import com.raisetech.entity.Task;
 @Mapper
 public interface TaskMapper {
 	
-  // 未完了タスクの一覧取得
+	// 未完了タスクの一覧取得
 	List<Task> selectTasks();
-  
+	
 	// 完了タスクの一覧取得
 	List<Task> selectCompletedTasks();
-  
+	
     //計算式1件登録
 	void insertTask(Task task);
 

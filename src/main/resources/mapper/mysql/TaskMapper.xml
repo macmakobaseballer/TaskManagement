@@ -8,7 +8,7 @@
 	<select id="selectTasks" resultType="com.raisetech.entity.Task">
 		SELECT * FROM tasks
 		WHERE completed_flag = false;
-  </select>
+	</select>
 
 	<select id="selectCompletedTasks" resultType="com.raisetech.entity.Task">
 		SELECT * FROM tasks 

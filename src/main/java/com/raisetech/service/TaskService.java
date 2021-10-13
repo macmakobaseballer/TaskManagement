@@ -13,8 +13,8 @@ public class TaskService {
     TaskMapper taskMapper;
     
     // 未了タスクの一覧取得
-    public List<Task> getFinTasks() {
-    	return taskMapper.selectFinTasks();
+    public List<Task> getCompletedTasks() {
+    	return taskMapper.selectCompletedTasks();
     }
     
     //一件新規登録

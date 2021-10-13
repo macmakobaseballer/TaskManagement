@@ -10,7 +10,7 @@ import com.raisetech.entity.Task;
 public interface TaskMapper {
 	
 	// 完了タスクの一覧取得
-	List<Task> selectFinTasks();
+	List<Task> selectCompletedTasks();
 	
     //計算式1件登録
 	void insertTask(Task task);

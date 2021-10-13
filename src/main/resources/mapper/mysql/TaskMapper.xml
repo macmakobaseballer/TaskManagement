@@ -5,7 +5,7 @@
 <!-- Mapperとxmlのマッピング -->
 <mapper namespace="com.raisetech.mapper.TaskMapper">
 	
-	<select id="selectFinTasks" resultMap="task">
+	<select id="selectFinTasks" resultType="com.raisetech.entity.Task">
 		SELECT * FROM tasks 
 		WHERE completed_flag = true;
 	</select>

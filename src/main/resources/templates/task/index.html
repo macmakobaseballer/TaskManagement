@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{layout/layout}">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" th:href="@{/css/layout/layout.css}">
+	<title>SeaLa</title>
+	</head>
+<body>
+	<main layout:fragment="content">
+	
+		<h3 class="text-primary pt-3 ps-5">未完了</h3>
+		<div class="overflow-auto container" style="max-height:400px">
+			<table class="table">
+				<thead>
+					<tr class="row justify-content-center">
+						<th class="col-1">完了フラグ</th>
+						<th class="col-9">タスク内容</th>
+						<th class="col-1">期限日</th>
+						<th class="col-1">詳細</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="table-primary row justify-content-center" th:each="task:${tasks}" th:object="${task}">
+						<td class="col-1">
+							<form>
+								<button class="rounded-circle bg-light"
+									style="height:30px;width:30px;"></button>
+							</form>
+						</td>
+						<td class="col-9" th:text="*{taskContent}"></td>
+						<td class="col-1" th:text="*{taskDeadline}"></td>
+						<td class="col-1">
+							<a th:href="@{/task/detail/id={id}(id=*{taskId})}">
+								<button class="btn btn-secondary btn-sm">詳細</button>
+							</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		
+		
+		<h3 class="text-success pt-3 ps-5">完了</h3>
+		<div class="overflow-auto container mb-3" style="max-height:400px">
+			<table class="table">
+				<thead>
+					<tr class="row justify-content-center">
+						<th class="col-1">完了フラグ</th>
+						<th class="col-9">タスク内容</th>
+						<th class="col-1">期限日</th>
+						<th class="col-1">詳細</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="table-success row justify-content-center" th:each="finTask:${finTasks}" th:object="${finTask}">
+						<td class="col-1">
+							<form>
+								<button class="rounded-circle text-white bg-success" 
+									style="height:30px;width:30px;">&#10004;</button>
+							</form>
+						</td>
+						<td class="col-9" th:text="*{taskContent}"></td>
+						<td class="col-1" th:text="*{taskDeadline}"></td>
+						<td class="col-1">
+							<a th:href="@{/task/detail/id={id}(id=*{taskId})}">
+								<button class="btn btn-secondary btn-sm">詳細</button>
+							</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</main>
+</body>
+</html>

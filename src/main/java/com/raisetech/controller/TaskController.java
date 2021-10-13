@@ -19,7 +19,7 @@ public class TaskController {
 	public String index(Model model) {
 		
 		model.addAttribute("tasks", taskService.getTasks());
-		model.addAttribute("finTasks", taskService.getFinTasks());
+		model.addAttribute("completedTasks", taskService.getCompletedTasks());
 		
 		return "task/index";
 	}

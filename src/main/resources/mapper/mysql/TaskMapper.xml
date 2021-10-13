@@ -4,7 +4,12 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- Mapperとxmlのマッピング -->
 <mapper namespace="com.raisetech.mapper.TaskMapper">
-	
+
+	<select id="selectTasks" resultType="com.raisetech.entity.Task">
+		SELECT * FROM tasks
+		WHERE completed_flag = false;
+  </select>
+
 	<select id="selectCompletedTasks" resultType="com.raisetech.entity.Task">
 		SELECT * FROM tasks 
 		WHERE completed_flag = true;
@@ -22,5 +27,5 @@
 			#{taskDeadline}
 			)	
 	</insert>
+	
 </mapper>
-

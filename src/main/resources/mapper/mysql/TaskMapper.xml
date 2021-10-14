@@ -9,6 +9,11 @@
 		SELECT * FROM tasks
 		WHERE completed_flag = false;
 	</select>
+
+	<select id="selectCompletedTasks" resultType="com.raisetech.entity.Task">
+		SELECT * FROM tasks 
+		WHERE completed_flag = true;
+	</select>
 	
 	<insert id="insertTask">
 		INSERT INTO tasks(

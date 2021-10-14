@@ -15,12 +15,6 @@
 		WHERE completed_flag = true;
 	</select>
 	
-	<select id="selectTask">
-		SELECT *
-		FROM tasks
-		wheretask_id = #{taskId}
-	</select>
-	
 	<insert id="insertTask">
 		INSERT INTO tasks(
 			task_content,

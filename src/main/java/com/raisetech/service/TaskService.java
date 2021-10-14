@@ -15,8 +15,8 @@ public class TaskService {
     TaskMapper taskMapper;
   
     // 未完了タスクの一覧取得
-    public List<Task> getTasks() {
-    	return taskMapper.selectTasks();
+    public List<Task> getIncompleteTasks() {
+    	return taskMapper.selectIncompleteTasks();
     }
   
     // 未了タスクの一覧取得

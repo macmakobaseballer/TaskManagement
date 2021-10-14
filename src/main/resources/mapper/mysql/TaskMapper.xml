@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- Mapperとxmlのマッピング -->
+<mapper namespace="com.raisetech.mapper.TaskMapper">
+
+	<select id="selectIncompleteTasks" resultType="com.raisetech.entity.Task">
+		SELECT * FROM tasks
+		WHERE completed_flag = false;
+	</select>
+
+	<select id="selectCompletedTasks" resultType="com.raisetech.entity.Task">
+		SELECT * FROM tasks 
+		WHERE completed_flag = true;
+	</select>
+	
+	<select id="selectTask">
+		SELECT *
+		FROM tasks
+		WHERE task_id = #{taskId}
+	</select>
+	
+	<insert id="insertTask">
+		INSERT INTO tasks(
+			task_content,
+			task_note,
+			task_deadline
+			)
+		VALUES(
+			#{taskContent},
+			#{taskNote},
+			#{taskDeadline}
+			)	
+	</insert>
+	
+</mapper>

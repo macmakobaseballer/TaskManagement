@@ -34,4 +34,10 @@
 			)	
 	</insert>
 	
+	<delete id="deleteTask">
+		DELETE FROM
+			tasks
+		WHERE
+			task_id = #{taskId}
+	</delete>
 </mapper>

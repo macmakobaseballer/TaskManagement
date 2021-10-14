@@ -23,6 +23,10 @@ public class TaskService {
     public List<Task> getCompletedTasks() {
     	return taskMapper.selectCompletedTasks();
     }
+    
+    public Task getTaskDetails(int taskId){
+        return taskMapper.selectTask(taskId);
+    }
   
     //一件新規登録
     public void registerTask(Task task){

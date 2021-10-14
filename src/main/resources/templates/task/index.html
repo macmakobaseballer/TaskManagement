@@ -22,7 +22,8 @@ layout:decorate="~{layout/layout}">
 					</tr>
 				</thead>
 				<tbody>
-					<tr class="table-primary row justify-content-center" th:each="task:${tasks}" th:object="${task}">
+					<tr class="table-primary row justify-content-center"
+						th:each="incompleteTask:${incompleteTasks}" th:object="${incompleteTask}">
 						<td class="col-1">
 							<form>
 								<button class="rounded-circle bg-light"

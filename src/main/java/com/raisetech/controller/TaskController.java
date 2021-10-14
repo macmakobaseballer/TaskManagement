@@ -18,7 +18,7 @@ public class TaskController {
 	@GetMapping("/")
 	public String index(Model model) {
 		
-		model.addAttribute("tasks", taskService.getTasks());
+		model.addAttribute("incompleteTasks", taskService.getIncompleteTasks());
 		model.addAttribute("completedTasks", taskService.getCompletedTasks());
 		
 		return "task/index";

@@ -28,9 +28,13 @@ public class TaskService {
         return taskMapper.selectTask(taskId);
     }
   
-    //一件新規登録
+    //新規タスクの一件登録
     public void registerTask(Task task){
         taskMapper.insertTask(task);
     }
     
+    //登録済みタスクの一件削除処理
+    public void deleteTask(int taskId){
+        taskMapper.deleteTask(taskId);
+    }
 }

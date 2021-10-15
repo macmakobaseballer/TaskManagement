@@ -33,6 +33,11 @@ public class TaskService {
         taskMapper.insertTask(task);
     }
     
+    // 完了フラグを未完了から完了に更新
+    public void updateToCompletedFlag(int taskId) {
+    	taskMapper.updateToCompletedFlag(taskId);
+    }
+    
     //登録済みタスクの一件削除処理
     public void deleteTask(int taskId){
         taskMapper.deleteTask(taskId);

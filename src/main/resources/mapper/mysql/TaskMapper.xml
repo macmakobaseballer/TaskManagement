@@ -34,6 +34,12 @@
 			)	
 	</insert>
 	
+	<update id="updateToCompletedFlag">
+		UPDATE tasks
+		SET completed_flag = true
+		WHERE task_id = #{taskId}
+	</update>
+	
 	<delete id="deleteTask">
 		DELETE FROM
 			tasks

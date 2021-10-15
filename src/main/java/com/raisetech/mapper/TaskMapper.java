@@ -18,7 +18,10 @@ public interface TaskMapper {
 	//タスクの詳細情報取得
 	Task selectTask(int taskId);
 	
-    //計算式1件登録
+    //タスクの一件登録
 	void insertTask(Task task);
+
+	//タスクの一件削除
+	void deleteTask(int taskId);
 
 }

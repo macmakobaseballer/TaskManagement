@@ -34,8 +34,8 @@ public class TaskService {
     }
     
     // 完了フラグを未完了から完了に更新
-    public void updateTaskToComplete(int taskId) {
-    	taskMapper.updateTaskToComplete(taskId);
+    public void updateCompletedFlagToTrue(int taskId) {
+    	taskMapper.updateCompletedFlagToTrue(taskId);
     }
     
     //登録済みタスクの一件削除処理

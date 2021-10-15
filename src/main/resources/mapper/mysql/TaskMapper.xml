@@ -34,7 +34,7 @@
 			)	
 	</insert>
 	
-	<update id="updateTaskToComplete">
+	<update id="updateCompletedFlagToTrue">
 		UPDATE tasks
 		SET completed_flag = true
 		WHERE task_id = #{taskId}

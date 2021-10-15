@@ -22,7 +22,7 @@ public interface TaskMapper {
 	void insertTask(Task task);
 	
 	// 完了フラグを未完了から完了に更新
-	void updateTaskToComplete(int taskId);
+	void updateCompletedFlagToTrue(int taskId);
 
 	//タスクの一件削除
 	void deleteTask(int taskId);

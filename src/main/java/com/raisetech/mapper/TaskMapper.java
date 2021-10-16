@@ -20,6 +20,9 @@ public interface TaskMapper {
 	
     //タスクの一件登録
 	void insertTask(Task task);
+	
+	// 完了フラグを未完了から完了に更新
+	void updateCompletedFlagToTrue(int taskId);
 
 	//タスクの一件削除
 	void deleteTask(int taskId);

@@ -39,7 +39,7 @@ public class TaskService {
     	taskMapper.updateCompletedFlagToTrue(taskId);
     }
     
-  //タスクの詳細情報更新（完了フラグ変更なし）
+    //タスクの詳細情報更新（完了フラグ変更なし）
     public void a(DetailForm form) {
 		taskMapper.updateTaskDetails(form);
 	}

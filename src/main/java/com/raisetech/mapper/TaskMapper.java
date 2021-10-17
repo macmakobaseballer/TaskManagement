@@ -5,7 +5,6 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.raisetech.entity.Task;
-import com.raisetech.form.DetailForm;
 
 @Mapper
 public interface TaskMapper {
@@ -26,7 +25,7 @@ public interface TaskMapper {
 	void updateCompletedFlagToTrue(int taskId);
 	
 	//タスクの詳細情報更新（完了フラグ変更なし）
-	void updateTaskDetails(DetailForm form);
+	void updateTaskDetails(Task task);
 	
 	//タスクの一件削除
 	void deleteTask(int taskId);

@@ -11,5 +11,5 @@ public class DetailForm {
 	private boolean completedFlag;
 	private String taskContent;
 	private String taskNote;
-	private LocalDate task_deadline;
+	private LocalDate taskDeadline;
 }

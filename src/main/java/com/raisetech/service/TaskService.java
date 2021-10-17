@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.raisetech.entity.Task;
-import com.raisetech.form.DetailForm;
 import com.raisetech.mapper.TaskMapper;
 
 @Service
@@ -25,6 +24,7 @@ public class TaskService {
     	return taskMapper.selectCompletedTasks();
     }
     
+    //タスクの詳細情報取得
     public Task getTaskDetails(int taskId){
         return taskMapper.selectTask(taskId);
     }
@@ -40,8 +40,8 @@ public class TaskService {
     }
     
     //タスクの詳細情報更新（完了フラグ変更なし）
-    public void a(DetailForm form) {
-		taskMapper.updateTaskDetails(form);
+    public void taskDetailsRenewal(Task task) {
+		taskMapper.updateTaskDetails(task);
 	}
     
     //登録済みタスクの一件削除処理

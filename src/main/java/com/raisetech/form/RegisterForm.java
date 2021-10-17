@@ -9,11 +9,11 @@ import lombok.Data;
 @Data
 public class RegisterForm {
 
-    private String taskContent ;
+    private String taskContent;
 
     @DateTimeFormat(pattern="yyyy/MM/dd")
-    private LocalDate taskDeadline ;
+    private LocalDate taskDeadline;
 
-    private String taskNote ;
+    private String taskNote;
 
 }

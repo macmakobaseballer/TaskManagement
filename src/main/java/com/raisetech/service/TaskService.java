@@ -40,8 +40,8 @@ public class TaskService {
     }
     
     //タスクの詳細情報更新（完了フラグ変更なし）
-    public void taskDetailsRenewal(Task task) {
-		taskMapper.updateTaskDetails(task);
+    public void updateTaskDetails(Task task) {
+		taskMapper.updateTaskDetailsWithoutCompletedFlag(task);
 	}
     
     //登録済みタスクの一件削除処理

@@ -25,7 +25,7 @@ public interface TaskMapper {
 	void updateCompletedFlagToTrue(int taskId);
 	
 	//タスクの詳細情報更新（完了フラグ変更なし）
-	void updateTaskDetails(Task task);
+	void updateTaskDetailsWithoutCompletedFlag(Task task);
 	
 	//タスクの一件削除
 	void deleteTask(int taskId);

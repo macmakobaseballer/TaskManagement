@@ -40,7 +40,7 @@
 		WHERE task_id = #{taskId}
 	</update>
 	
-	<update id="updateTaskDetails">
+	<update id="updateTaskDetailsWithoutCompletedFlag">
 		UPDATE tasks
 		SET task_content = #{taskContent},
 			task_note = #{taskNote},

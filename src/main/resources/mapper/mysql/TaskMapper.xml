@@ -48,6 +48,15 @@
 		WHERE task_id = #{taskId} 
 	</update>
 	
+	<update id="updateTaskDetailsWithCompletedFlag">
+		UPDATE tasks
+		SET completed_flag = #{completedFlag},
+			task_content = #{taskContent},
+			task_note = #{taskNote},
+			task_deadline = #{taskDeadline}
+		WHERE task_id = #{taskId} 
+	</update>
+	
 	<delete id="deleteTask">
 		DELETE FROM
 			tasks

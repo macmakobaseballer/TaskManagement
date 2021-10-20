@@ -44,6 +44,11 @@ public class TaskService {
 		taskMapper.updateTaskDetailsWithoutCompletedFlag(task);
 	}
     
+    //タスク詳細の更新処理（完了フラグ変更あり）
+    public void updateTaskAllDetails(Task task) {
+		taskMapper.updateTaskDetailsWithCompletedFlag(task);
+	}
+    
     //登録済みタスクの一件削除処理
     public void deleteTask(int taskId){
         taskMapper.deleteTask(taskId);

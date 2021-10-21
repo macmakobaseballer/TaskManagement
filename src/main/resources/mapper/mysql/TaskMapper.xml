@@ -39,6 +39,12 @@
 		SET completed_flag = true
 		WHERE task_id = #{taskId}
 	</update>
+
+	<update id="updateCompletedFlagToFalse">
+		UPDATE tasks
+		SET completed_flag = false
+		WHERE task_id = #{taskId}
+	</update>
 	
 	<update id="updateTaskDetailsWithoutCompletedFlag">
 		UPDATE tasks

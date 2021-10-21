@@ -39,6 +39,11 @@ public class TaskService {
     	taskMapper.updateCompletedFlagToTrue(taskId);
     }
     
+    // 完了フラグを完了から未完了に更新
+    public void updateCompletedFlagToFalse(int taskId) {
+        taskMapper.updateCompletedFlagToFalse(taskId);
+    }
+
     //タスクの詳細情報更新（完了フラグ変更なし）
     public void updateTaskDetails(Task task) {
 		taskMapper.updateTaskDetailsWithoutCompletedFlag(task);

@@ -23,6 +23,9 @@ public interface TaskMapper {
 	
 	// 完了フラグを未完了から完了に更新
 	void updateCompletedFlagToTrue(int taskId);
+
+	// 完了フラグを未完了から完了に更新
+	void updateCompletedFlagToFalse(int taskId);
 	
 	//タスクの詳細情報更新（完了フラグ変更なし）
 	void updateTaskDetailsWithoutCompletedFlag(Task task);

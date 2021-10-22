@@ -55,6 +55,19 @@ public class TaskDetailController {
 		
 		return "redirect:/task/";
 	}
+	
+	//完了フラグをfalseに戻す処理
+	@PostMapping(value = "/detail/id={id}",params = "incomplete")
+	public String postTaskIncompleted(@PathVariable int id,Model model,@ModelAttribute DetailForm form){
+		//画面から受け取ったformの内容をtaskに渡す
+		Task task = modelMapper.map(form,Task.class);
+		task.setTaskId(id);
+	    //更新処理
+		taskService.updateCompletedFlagToFalse(id);
+		
+		return "redirect:/task/";
+	}
+	
 	//タスクの削除
 	@PostMapping(value = "/detail/id={id}",params = "delete")
 	public String postDelete(@PathVariable int id,Model model,@ModelAttribute DetailForm form) {

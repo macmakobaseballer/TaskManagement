@@ -12,7 +12,10 @@ layout:decorate="~{layout/layout}">
         <div class="mt-4 container">
         <h4 class="py-3">タスク詳細表示</h4>
         <form method="post" th:object="${detailForm}">
-          <div class="text-end">
+          <div class="text-end" th:if="*{isCompletedFlag()}">
+            <button type="submit" class="btn btn-primary" th:formaction="'/task/detail/id=' + *{taskId}" name = "incomplete">未完了に戻す</button>
+          </div>
+          <div class="text-end" th:unless="*{isCompletedFlag()}">
             <button type="submit" class="btn btn-primary" th:formaction="'/task/detail/id=' + *{taskId}" name = "complete">タスク完了</button>
           </div>
             <div class="mb-3 mx-3">

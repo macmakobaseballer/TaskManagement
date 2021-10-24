@@ -4,6 +4,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,7 +28,7 @@ public class TaskDetailController {
 	
 	//詳細画面表示
 	@GetMapping("/detail/id={id}")
-	public String getDetail(@PathVariable int id,Model model,@ModelAttribute DetailForm form) {
+	public String getDetail(@PathVariable int id,@ModelAttribute DetailForm form,Model model) {
 		model.addAttribute("detailForm", taskService.getTaskDetails(id));
 		
 		return "task/detail";
@@ -34,7 +36,16 @@ public class TaskDetailController {
 	
 	//タスク詳細の更新処理（完了フラグ変更なし）
 	@PostMapping(value = "/detail/id={id}",params = "update")
-	public String postDetail(@PathVariable int id,Model model,@ModelAttribute DetailForm form){
+	public String postDetail(@PathVariable int id,Model model,
+							@ModelAttribute @Validated DetailForm form,
+							BindingResult bindingResult){
+
+		//入力チェックの結果判定
+		if (bindingResult.hasErrors()){
+            //NGの場合：タスク詳細画面に戻る
+            return "task/detail";
+        }
+
 		//画面から受け取ったformの内容をtaskに渡す
 		Task task = modelMapper.map(form,Task.class);
 		task.setTaskId(id);
@@ -46,7 +57,16 @@ public class TaskDetailController {
 	
 	//タスク詳細の更新処理（完了フラグ変更あり）
 	@PostMapping(value = "/detail/id={id}",params = "complete")
-	public String postTaskCompleted(@PathVariable int id,Model model,@ModelAttribute DetailForm form){
+	public String postTaskCompleted(@PathVariable int id,Model model,
+									@ModelAttribute @Validated DetailForm form,
+									BindingResult bindingResult){
+
+        //入力チェックの結果判定
+        if (bindingResult.hasErrors()){
+            //NGの場合：タスク詳細画面に戻る
+            return "task/detail";
+        }
+
 		//画面から受け取ったformの内容をtaskに渡す
 		Task task = modelMapper.map(form,Task.class);
 		task.setTaskId(id);
@@ -58,7 +78,16 @@ public class TaskDetailController {
 	
 	//完了フラグをfalseに戻す処理
 	@PostMapping(value = "/detail/id={id}",params = "incomplete")
-	public String postTaskIncompleted(@PathVariable int id,Model model,@ModelAttribute DetailForm form){
+	public String postTaskIncompleted(@PathVariable int id,Model model,
+									@ModelAttribute  DetailForm form,
+									BindingResult bindingResult){
+
+		//入力チェックの結果判定
+		if (bindingResult.hasErrors()){
+		//NGの場合：タスク詳細画面に戻る
+		return "task/detail";
+		}
+
 		//画面から受け取ったformの内容をtaskに渡す
 		Task task = modelMapper.map(form,Task.class);
 		task.setTaskId(id);

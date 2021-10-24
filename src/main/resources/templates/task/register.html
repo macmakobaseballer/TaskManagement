@@ -27,7 +27,7 @@ layout:decorate="~{layout/layout}">
             <div class="mb-4 mx-3">
               <label for="taskNote" class="form-label">備考</label>
               <textarea type="text" class="form-control" rows="5" th:field="*{taskNote}"
-              th:errorclass="is-invalid"></textarea>
+                        th:errorclass="is-invalid"></textarea>
               <div class="invalid-feedback" th:errors="*{taskNote}"></div>
             </div>
             <div class="text-center">

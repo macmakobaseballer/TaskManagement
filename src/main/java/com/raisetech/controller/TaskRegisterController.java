@@ -36,7 +36,7 @@ public class TaskRegisterController {
 
         //入力チェックの結果判定
         if (bindingResult.hasErrors()){
-            //NGの場合：ユーザー登録画面に戻る
+            //NGの場合：タスク登録画面に戻る
             return getRegister(form);
         }
 

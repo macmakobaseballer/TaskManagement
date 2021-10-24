@@ -85,7 +85,7 @@ public class TaskDetailController {
 		//入力チェックの結果判定
 		if (bindingResult.hasErrors()){
 		//NGの場合：タスク詳細画面に戻る
-		return "task/detail";
+			return "task/detail";
 		}
 
 		//画面から受け取ったformの内容をtaskに渡す
@@ -100,7 +100,7 @@ public class TaskDetailController {
 	//タスクの削除
 	@PostMapping(value = "/detail/id={id}",params = "delete")
 	public String postDelete(@PathVariable int id,Model model,@ModelAttribute DetailForm form) {
-		 taskService.deleteTask(id);
+		taskService.deleteTask(id);
 		
 		return "redirect:/task/";
 	}

@@ -8,6 +8,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,7 +32,14 @@ public class TaskRegisterController {
     }
 
     @PostMapping("/register")
-    public String postRegister(Model model,@ModelAttribute RegisterForm form){
+    public String postRegister(Model model,@ModelAttribute @Validated RegisterForm form,BindingResult bindingResult){
+
+        //入力チェックの結果判定
+        if (bindingResult.hasErrors()){
+            //NGの場合：タスク登録画面に戻る
+            return getRegister(form);
+        }
+
         //画面から受け取ったformの内容をtaskに渡す
         Task task = modelMapper.map(form,Task.class);
         //登録処理

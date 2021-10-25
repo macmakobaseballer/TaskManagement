@@ -15,16 +15,20 @@ layout:decorate="~{layout/layout}">
             <div class="mb-3 mx-3">
               <label for="taskContent" class="form-label">タスク内容</label>
               <input type="text" class="form-control" th:field="*{taskContent}" 
-                     placeholder="タスク内容を入力してください">
+                     th:errorclass="is-invalid" placeholder="タスク内容を入力してください">
+              <div class="invalid-feedback" th:errors="*{taskContent}"></div>
             </div>
             <div class="mb-3 mx-3">
               <label for="taskDeadline" class="form-label">期限日</label>
               <input type="text" class="form-control" th:field="*{taskDeadline}"
-                     placeholder="yyyy/MM/dd">
+                     th:errorclass="is-invalid" placeholder="yyyy/MM/dd">
+              <div class="invalid-feedback" th:errors="*{taskDeadline}"></div>
             </div>
             <div class="mb-4 mx-3">
               <label for="taskNote" class="form-label">備考</label>
-              <textarea type="text" class="form-control" rows="5" th:field="*{taskNote}"></textarea>
+              <textarea type="text" class="form-control" rows="5" th:field="*{taskNote}"
+                        th:errorclass="is-invalid"></textarea>
+              <div class="invalid-feedback" th:errors="*{taskNote}"></div>
             </div>
             <div class="text-center">
               <button type="submit" class="btn btn-primary">新規登録</button>

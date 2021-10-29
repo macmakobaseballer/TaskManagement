@@ -15,5 +15,5 @@ public class Task {
     private String taskNote;
     @DateTimeFormat(pattern="yyyy/MM/dd")
     private LocalDate taskDeadline;
-
+    
 }

@@ -11,19 +11,19 @@ import lombok.Data;
 
 @Data
 public class DetailForm {
-
-	private int taskId;
-
-	private boolean completedFlag;
-
+    
+    private int taskId;
+    
+    private boolean completedFlag;
+    
     @Length(max=100)
     @NotBlank
-	private String taskContent;
-
+    private String taskContent;
+    
     @Length(max=200)
-	private String taskNote;
-
-	@DateTimeFormat(pattern="yyyy/MM/dd")
-	private LocalDate taskDeadline;
-
+    private String taskNote;
+    
+    @DateTimeFormat(pattern="yyyy/MM/dd")
+    private LocalDate taskDeadline;
+    
 }

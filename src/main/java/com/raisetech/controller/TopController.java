@@ -32,7 +32,7 @@ public class TopController {
 
         taskService.updateCompletedFlagToTrue(id);
 
-        return "redirect:/task/";
+        return "redirect:/";
     }
 
     // 完了フラグ変更(true -> false)
@@ -41,7 +41,7 @@ public class TopController {
 
         taskService.updateCompletedFlagToFalse(id);
 
-        return "redirect:/task/";
+        return "redirect:/";
     }
 
 }

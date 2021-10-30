@@ -24,7 +24,7 @@ layout:decorate="~{layout/layout}">
           <tr class="table-primary row justify-content-center"
             th:each="incompleteTask:${incompleteTasks}" th:object="${incompleteTask}">
             <td class="col-1">
-              <form th:action="@{/task/complete/id={id}(id=*{taskId})}" method="post">
+              <form th:action="@{/complete/id={id}(id=*{taskId})}" method="post">
                 <button class="rounded-circle bg-light"
                   style="height:30px;width:30px;"></button>
               </form>
@@ -58,7 +58,7 @@ layout:decorate="~{layout/layout}">
           <tr class="table-success row justify-content-center" 
             th:each="completedTask:${completedTasks}" th:object="${completedTask}">
             <td class="col-1">
-              <form th:action="@{/task/incomplete/id={id}(id=*{taskId})}" method="post">
+              <form th:action="@{/incomplete/id={id}(id=*{taskId})}" method="post">
                 <button class="rounded-circle text-white bg-success" 
                   style="height:30px;width:30px;">&#10004;</button>
               </form>

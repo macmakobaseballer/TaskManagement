@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.raisetech.service.TaskService;
 
 @Controller
-@RequestMapping("/task")
-public class TaskController {
+@RequestMapping("/")
+public class TopController {
 
     @Autowired
     TaskService taskService;
@@ -32,7 +32,7 @@ public class TaskController {
 
         taskService.updateCompletedFlagToTrue(id);
 
-        return "redirect:/task/";
+        return "redirect:/";
     }
 
     // 完了フラグ変更(true -> false)
@@ -41,7 +41,7 @@ public class TaskController {
 
         taskService.updateCompletedFlagToFalse(id);
 
-        return "redirect:/task/";
+        return "redirect:/";
     }
 
 }

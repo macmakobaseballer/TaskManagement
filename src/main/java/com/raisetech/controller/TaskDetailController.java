@@ -52,7 +52,7 @@ public class TaskDetailController {
         // 更新処理
         taskService.updateTaskDetails(task);
         
-        return "redirect:/task/";
+        return "redirect:/";
     }
     
     // タスク詳細の更新処理（完了フラグ変更あり）
@@ -73,7 +73,7 @@ public class TaskDetailController {
         // 更新処理
         taskService.updateTaskAllDetails(task);
         
-        return "redirect:/task/";
+        return "redirect:/";
     }
     
     // 完了フラグをfalseに戻す処理
@@ -94,7 +94,7 @@ public class TaskDetailController {
         // 更新処理
         taskService.updateCompletedFlagToFalse(id);
         
-        return "redirect:/task/";
+        return "redirect:/";
     }
     
     // タスクの削除
@@ -102,6 +102,6 @@ public class TaskDetailController {
     public String postDelete(@PathVariable int id,Model model,@ModelAttribute DetailForm form) {
         taskService.deleteTask(id);
         
-        return "redirect:/task/";
+        return "redirect:/";
     }
 }

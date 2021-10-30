@@ -45,7 +45,7 @@ public class TaskRegisterController {
         // 登録処理
         taskService.registerTask(task);
         
-        return "redirect:/task/";
+        return "redirect:/";
         
     }
 }

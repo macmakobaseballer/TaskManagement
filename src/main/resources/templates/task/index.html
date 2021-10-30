@@ -24,7 +24,7 @@ layout:decorate="~{layout/layout}">
           <tr class="table-primary row justify-content-center"
             th:each="incompleteTask:${incompleteTasks}" th:object="${incompleteTask}">
             <td class="col-1">
-              <form th:action="@{/task/complete/id={id}(id=*{taskId})}" method="post">
+              <form th:action="@{/complete/id={id}(id=*{taskId})}" method="post">
                 <button class="rounded-circle bg-light"
                   style="height:30px;width:30px;"></button>
               </form>
@@ -32,7 +32,7 @@ layout:decorate="~{layout/layout}">
             <td class="col-9" th:text="*{taskContent}"></td>
             <td class="col-1" th:text="*{taskDeadline}"></td>
             <td class="col-1">
-              <a th:href="@{/task/detail/id={id}(id=*{taskId})}">
+              <a th:href="@{/detail/id={id}(id=*{taskId})}">
                 <button class="btn btn-secondary btn-sm">詳細</button>
               </a>
             </td>

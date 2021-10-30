@@ -17,7 +17,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 // @TestPropertySource(locations = "classpath: test.properties")
-public class TaskControllerTest {
+public class TopControllerTest {
 
     private MockMvc mockMvc;
 
@@ -25,7 +25,7 @@ public class TaskControllerTest {
     // private TaskService service;
 
     @Autowired
-    private TaskController target;
+    private TopController target;
 
     @BeforeEach
     public void setUp() throws Exception {

@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.raisetech.service.TaskService;
 
 @Controller
-@RequestMapping("/task")
-public class TaskController {
+@RequestMapping("/")
+public class TopController {
 
     @Autowired
     TaskService taskService;
